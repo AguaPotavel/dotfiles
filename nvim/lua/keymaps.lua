@@ -10,6 +10,7 @@ local map = function (mode, keys, action, opts)
 end
 
 map("i", "jj", "<Esc>", { noremap = false})
+map("i", "WW", "<Esc>:w!<enter>", { noremap = false})
 
 -- twilight
 map("n", "tw", ":Twilight<enter>", {noremap=false})
