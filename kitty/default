@@ -1,0 +1,5 @@
+# Set the working directory for windows in the current tab
+#cd /home/ruan/Documents/projects/
+# Create a window and run the specified command in it
+launch zellij 
+
