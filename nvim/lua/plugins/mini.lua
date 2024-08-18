@@ -54,6 +54,7 @@ starter.setup({
   header = logo,
   items = {
     -- Files
+    new_section("New file", "ene | startinsert", "Built-in"),
     new_section("Find file (Folder)", ts.find_files, "Files"),
     new_section("Find file (Root)", ts.live_grep, "Files"),
     new_section("Recent files", ts.oldfiles, "Files"),
@@ -90,10 +91,10 @@ require('mini.animate').setup({
   },
 
   open = {
-    enable = true
+    enable = false
   },
 
   close = {
-    enable = true
+    enable = false
   }
 })

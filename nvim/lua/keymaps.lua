@@ -24,7 +24,7 @@ map("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 map("n", "<leader>bd", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
 -- files
-map("n", "QQ", ":q!<enter>", {noremap=false})
+map("n", "QQ", ":qa!<enter>", {noremap=false})
 map("n", "WW", ":w!<enter>", {noremap=false})
 map("n", "E", "$", {noremap=false})
 map("n", "B", "^", {noremap=false})

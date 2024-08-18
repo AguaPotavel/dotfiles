@@ -35,3 +35,7 @@ vim.o.completeopt = 'menuone,noselect'
 -- Concealer for Neorg
 vim.o.conceallevel=2
 
+vim.opt.tabstop = 2
+vim.opt.smartindent = true
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
