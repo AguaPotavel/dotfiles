@@ -35,6 +35,9 @@ require('lazy').setup({
     },
     config = true
   },
+  {
+    "folke/neodev.nvim"
+  },
   --{
   --  'Exafunction/codeium.vim',
   --  event = "InsertEnter",
@@ -182,8 +185,6 @@ require('lazy').setup({
     }
   },
 
-  'ray-x/go.nvim',
-  'ray-x/guihua.lua',
   { "catppuccin/nvim", as = "catppuccin" },
   {
     "windwp/nvim-autopairs",
@@ -211,58 +212,7 @@ require('lazy').setup({
       'hrsh7th/cmp-buffer',
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip'
-    },
-    config = function()
-      -- nvim-cmp setup
-      local cmp = require 'cmp'
-      local luasnip = require 'luasnip'
-
-      cmp.setup({
-        view = {
-          entries = "native"
-        },
-        snippet = {
-          expand = function(args)
-            luasnip.lsp_expand(args.body)
-          end,
-        },
-        window = {
-          completion = cmp.config.window.bordered()
-        },
-        mapping = cmp.mapping.preset.insert {
-          ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-f>'] = cmp.mapping.scroll_docs(4),
-          ['<C-Space>'] = cmp.mapping.complete(),
-          ['<CR>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-          },
-          ['<Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
-          ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
-        },
-        sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = "neorg" },
-        },
-      })
-    end
+    }
   },
 
   { -- Highlight, edit, and navigate code
