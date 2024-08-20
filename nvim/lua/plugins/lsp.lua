@@ -6,7 +6,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 require("mason").setup()
 
-local servers = {  "tsserver", "svelte" }
+local servers = { "tsserver", "svelte", "lua_ls", "angularls" }
 
 require("mason-lspconfig").setup({
   ensure_installed = servers
@@ -26,6 +26,7 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, attach_opts)
   vim.keymap.set('n', 'so', require('telescope.builtin').lsp_references, attach_opts)
 end
+
 
 -- nvim-cmp supports additional completion capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()
