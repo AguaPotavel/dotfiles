@@ -1,0 +1,52 @@
+" Definir o líder como espaço
+let mapleader=" "
+
+" Mapeamentos no modo normal
+map <S-h> <Action>(PreviousTab)
+map <S-l> <Action>(NextTab)
+map <leader>bb <Action>(RecentFiles)
+map <leader>` <Action>(RecentFiles)
+map <leader>bd <Action>(CloseContent)
+map QQ <Action>(Exit)
+map WW <Action>(SaveAll)
+map E $
+map B ^
+map ss <Action>(ClearHighlights)
+map <A-j> <Action>(MoveLineDown)
+map <A-k> <Action>(MoveLineUp)
+map <leader>w <Action>(FocusEditor)
+map <leader>- <Action>(SplitVertically)
+map <leader>| <Action>(SplitHorizontally)
+map <leader>wd <Action>(CloseAllEditors)
+map <leader>qq <Action>(CloseProject)
+
+" Mapeamentos no modo de inserção
+imap jj <Esc>
+imap WW <Action>(SaveAll)
+imap <A-j> <Action>(MoveLineDown)
+imap <A-k> <Action>(MoveLineUp)
+
+" Mapeamentos no modo visual
+vmap <A-j> <Action>(MoveLineDown)
+vmap <A-k> <Action>(MoveLineUp)
+
+" Navegação entre janelas
+map <C-h> <Action>(SelectPreviousWindow)
+map <C-j> <Action>(MoveDown)
+map <C-k> <Action>(MoveUp)
+map <C-l> <Action>(SelectNextWindow)
+
+" Ações do Telescope (ou similares)
+map <leader>ff <Action>(FindInFiles)
+map <leader>fh <Action>(ShowAllSymbols)
+map <leader>fw <Action>(SelectNextOccurrence)
+map <leader>fg <Action>(FindInFiles)
+map <leader>fd <Action>(ShowProblems)
+map <leader>fb <Action>(QuickOpen)
+map <leader>fS <Action>(Vcs.ShowOutput)
+map <leader>fm <Action>(QuickOpen)
+map <leader>fr <Action>(VcsHistory)
+map <leader>fR <Action>(VcsSync)
+map <leader>fn <Action>(ShowNotifications)
+map ft <Action>(ShowTasks)
+map <leader><Tab> <Action>(ShowAllActions)

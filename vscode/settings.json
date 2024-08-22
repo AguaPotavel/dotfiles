@@ -1,0 +1,97 @@
+
+{
+  // default keymaps
+  "vim.leader": " ",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<S-h>"], "commands": ["workbench.action.previousEditor"] },
+    { "before": ["<S-l>"], "commands": ["workbench.action.nextEditor"] },
+    { "before": ["<leader>", "b", "b"], "commands": ["workbench.action.quickOpenPreviousRecentlyUsedEditor"] },
+    { "before": ["<leader>", "`"], "commands": ["workbench.action.quickOpenPreviousRecentlyUsedEditor"] },
+    { "before": ["<leader>", "b", "d"], "commands": ["workbench.action.closeActiveEditor"] },
+    { "before": ["Q", "Q"], "commands": ["workbench.action.quit"] },
+    { "before": ["W", "W"], "commands": ["workbench.action.files.save"] },
+    { "before": ["E"], "after": ["$"] },
+    { "before": ["B"], "after": ["^"] },
+    { "before": ["s", "s"], "commands": ["editor.action.clearHighlight"] },
+    { "before": ["<A-j>"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["<A-k>"], "commands": ["editor.action.moveLinesUpAction"] },
+    { "before": ["<leader>", "w"], "commands": ["workbench.action.focusPanel"] },
+    { "before": ["<leader>", "-"], "commands": ["workbench.action.splitEditorDown"] },
+    { "before": ["<leader>", "|"], "commands": ["workbench.action.splitEditorRight"] },
+    { "before": ["<leader>", "w", "d"], "commands": ["workbench.action.closeEditorsInGroup"] },
+    { "before": ["<leader>", "q", "q"], "commands": ["workbench.action.closeWindow"] }
+  ],
+  "vim.insertModeKeyBindings": [
+    { "before": ["j", "j"], "after": ["<Esc>"] },
+    { "before": ["W", "W"], "commands": ["workbench.action.files.save"] },
+    { "before": ["<A-j>"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["<A-k>"], "commands": ["editor.action.moveLinesUpAction"] }
+  ],
+  "vim.visualModeKeyBindings": [
+    { "before": ["<A-j>"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["<A-k>"], "commands": ["editor.action.moveLinesUpAction"] }
+  ],
+  "vim.normalModeKeyBindings": [
+    { "before": ["<C-h>"], "commands": ["workbench.action.navigateLeft"] },
+    { "before": ["<C-j>"], "commands": ["workbench.action.navigateDown"] },
+    { "before": ["<C-k>"], "commands": ["workbench.action.navigateUp"] },
+    { "before": ["<C-l>"], "commands": ["workbench.action.navigateRight"] }
+  ],
+
+
+  // telescope keymaps
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "f", "h"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+      "before": ["<leader>", "f", "w"],
+      "commands": ["editor.action.addSelectionToNextFindMatch"]
+    },
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "f", "d"],
+      "commands": ["workbench.actions.view.problems"]
+    },
+    {
+      "before": ["<leader>", "f", "b"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "S"],
+      "commands": ["git.showOutput"]
+    },
+    {
+      "before": ["<leader>", "f", "m"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "r"],
+      "commands": ["git.viewHistory"]
+    },
+    {
+      "before": ["<leader>", "f", "R"],
+      "commands": ["git.sync"]
+    },
+    {
+      "before": ["<leader>", "f", "n"],
+      "commands": ["notifications.showList"]
+    },
+    {
+      "before": ["f", "t"],
+      "commands": ["workbench.action.tasks.showTasks"]
+    },
+    {
+      "before": ["<leader>", "<tab>"],
+      "commands": ["workbench.action.showCommands"]
+    }
+  ]
+}

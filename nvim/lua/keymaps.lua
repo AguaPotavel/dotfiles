@@ -12,10 +12,6 @@ end
 map("i", "jj", "<Esc>", { noremap = false})
 map("i", "WW", "<Esc>:w!<enter>", { noremap = false})
 
--- twilight
-map("n", "tw", ":Twilight<enter>", {noremap=false})
-map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
-
 -- buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
@@ -30,9 +26,6 @@ map("n", "E", "$", {noremap=false})
 map("n", "B", "^", {noremap=false})
 map("n", "TT", ":TransparentToggle<CR>", {noremap=true})
 map("n", "ss", ":noh<CR>", {noremap=true})
-
--- neotree
---map("n", "<leader>e", ":Neotree toggle<CR>", {noremap= true})
 
 -- Move Lines
 map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
@@ -50,6 +43,7 @@ map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
 map('n', '<space><space>', "<cmd>set nohlsearch<CR>")
+map('v', '<space><space>', "<Esc>")
 
 -- Quicker close split
 map("n", "<leader>qq", ":q<CR>",
