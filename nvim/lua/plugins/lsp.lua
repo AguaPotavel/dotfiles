@@ -27,6 +27,7 @@ local on_attach = function(_, bufnr)
   vim.keymap.set('n', 'so', require('telescope.builtin').lsp_references, attach_opts)
 end
 
+require("fidget").setup({})
 
 -- nvim-cmp supports additional completion capabilities
 local capabilities = vim.lsp.protocol.make_client_capabilities()

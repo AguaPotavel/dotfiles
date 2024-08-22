@@ -271,7 +271,7 @@ require('lazy').setup({
     }
   },
 
-  {'echasnovski/mini.nvim', version = false }
+  {'echasnovski/mini.nvim', version = false },
 
-
+  { 'ggandor/leap.nvim', enabled = true}
 })
