@@ -273,5 +273,27 @@ require('lazy').setup({
 
   {'echasnovski/mini.nvim', version = false },
 
-  { 'ggandor/leap.nvim', enabled = true}
+  { 'ggandor/leap.nvim', enabled = true},
+
+  { "windwp/nvim-ts-autotag",
+    ft= {
+      "javascriptreact",
+      "typescriptreact"
+    },
+
+    config = function ()
+      require("nvim-ts-autotag").setup()
+    end
+  },
+
+  {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  } 
+
+
+
+
 })
