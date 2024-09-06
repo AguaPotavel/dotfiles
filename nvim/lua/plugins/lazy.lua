@@ -150,7 +150,7 @@ require('lazy').setup({
     "rcarriga/nvim-notify",
     config = function()
       require("notify").setup({
-        background_colour = "#000000",
+        background_color = "#000000",
         enabled = false,
       })
     end
@@ -276,13 +276,26 @@ require('lazy').setup({
   { 'ggandor/leap.nvim', enabled = true},
 
   { "windwp/nvim-ts-autotag",
-    ft= {
-      "javascriptreact",
-      "typescriptreact"
-    },
 
     config = function ()
-      require("nvim-ts-autotag").setup()
+      require("nvim-ts-autotag").setup({
+        per_filetype = {
+          "html",
+          "javascript",
+          "javascriptreact",
+          "typescript",
+          "typescriptreact",
+          "tsx",
+          "jsx"
+        },
+        aliases= {
+          ["typescriptreact"] = "javascriptreact",
+          ["tsx"] = "javascriptreact",
+        },
+        enable_close = true,
+        enable_rename = true,
+        enable_close_on_slash = true 
+      })
     end
   },
 
@@ -291,7 +304,19 @@ require('lazy').setup({
     config = function()
         require('Comment').setup()
     end
-  } 
+  },
+
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    config = function ()
+      require('oil').setup({
+        default_file_explorer = true,
+      })
+
+      vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", {noremap=true})
+    end,
+  }
 
 
 

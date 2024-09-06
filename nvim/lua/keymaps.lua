@@ -49,7 +49,7 @@ map('v', '<space><space>', "<Esc>")
 map("n", "<leader>qq", ":q<CR>",
   {silent = true, noremap = true}
 )
-
+   
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 map({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
