@@ -41,3 +41,4 @@ end)
 
 require("setup.plugins.leap")
 require("setup.plugins.mini")
+require("setup.plugins.auto-tag")
