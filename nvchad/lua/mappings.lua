@@ -31,4 +31,10 @@ map("n", "<leader>qq", ":q<CR>",
   {silent = true, noremap = true}
 )
 
--- require plugins maps
+-- Codeium commands
+
+-- stop autocomplete
+map("n", "<leader>cd", "<cmd>Codeium Disable<cr>", { desc = "Codeium Disable" })
+-- start autocomplete
+map("n", "<leader>ce", "<cmd>Codeium Enable<cr>", { desc = "Codeium Enable" })
+
