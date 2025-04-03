@@ -1,26 +1,37 @@
-
 {
+  "git.autofetch": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.env.windows": {},
+  "console-ninja.featureSet": "Community",
+  "explorer.sortOrder": "filesFirst",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "window.titleBarStyle": "custom",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // VIM
   // default keymaps
   "vim.leader": " ",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    { "before": ["<S-h>"], "commands": ["workbench.action.previousEditor"] },
-    { "before": ["<S-l>"], "commands": ["workbench.action.nextEditor"] },
-    { "before": ["<leader>", "b", "b"], "commands": ["workbench.action.quickOpenPreviousRecentlyUsedEditor"] },
-    { "before": ["<leader>", "`"], "commands": ["workbench.action.quickOpenPreviousRecentlyUsedEditor"] },
-    { "before": ["<leader>", "b", "d"], "commands": ["workbench.action.closeActiveEditor"] },
-    { "before": ["Q", "Q"], "commands": ["workbench.action.quit"] },
-    { "before": ["W", "W"], "commands": ["workbench.action.files.save"] },
-    { "before": ["E"], "after": ["$"] },
-    { "before": ["B"], "after": ["^"] },
-    { "before": ["s", "s"], "commands": ["editor.action.clearHighlight"] },
-    { "before": ["<A-j>"], "commands": ["editor.action.moveLinesDownAction"] },
-    { "before": ["<A-k>"], "commands": ["editor.action.moveLinesUpAction"] },
-    { "before": ["<leader>", "w"], "commands": ["workbench.action.focusPanel"] },
-    { "before": ["<leader>", "-"], "commands": ["workbench.action.splitEditorDown"] },
-    { "before": ["<leader>", "|"], "commands": ["workbench.action.splitEditorRight"] },
-    { "before": ["<leader>", "w", "d"], "commands": ["workbench.action.closeEditorsInGroup"] },
-    { "before": ["<leader>", "q", "q"], "commands": ["workbench.action.closeWindow"] }
-  ],
+
   "vim.insertModeKeyBindings": [
     { "before": ["j", "j"], "after": ["<Esc>"] },
     { "before": ["W", "W"], "commands": ["workbench.action.files.save"] },
@@ -35,12 +46,65 @@
     { "before": ["<C-h>"], "commands": ["workbench.action.navigateLeft"] },
     { "before": ["<C-j>"], "commands": ["workbench.action.navigateDown"] },
     { "before": ["<C-k>"], "commands": ["workbench.action.navigateUp"] },
-    { "before": ["<C-l>"], "commands": ["workbench.action.navigateRight"] }
+    { "before": ["<C-l>"], "commands": ["workbench.action.navigateRight"] },
+
+    { "before": ["<leader>", "a", "e"], "commands": ["workbench.view.explorer"] },       // Explorer
+    { "before": ["<leader>", "a", "s"], "commands": ["workbench.action.search.toggle"] }, // Search
+    { "before": ["<leader>", "a", "g"], "commands": ["workbench.view.scm"] },           // Git/SCM
+    { "before": ["<leader>", "a", "d"], "commands": ["workbench.view.debug"] },          // Debug
+    { "before": ["<leader>", "a", "x"], "commands": ["workbench.extensions."] }, // Extensions
+    { "before": ["<leader>", "a", "t"], "commands": ["workbench.action.terminal.toggleTerminal"] }, // Terminal
+    { "before": ["<leader>", "a", "p"], "commands": ["workbench.view.extension.test"] }, // Test (se estiver instalado)
+    { "before": ["<leader>", "a", "o"], "commands": ["workbench.view.remote"] },         // Remote Explorer
+    { "before": ["<leader>", "a", "m"], "commands": ["workbench.actions.view.problems"] }, // Problems
+    { "before": ["<leader>", "a", "c"], "commands": ["workbench.view.extension.copilot"] }, // Copilot (se estiver instalado)
+    { "before": ["<leader>", "a", "b"], "commands": ["workbench.view.extension.browser-preview"] }, // Browser Preview (se estiver instalado)
+
+    { "before": ["<leader>", "q"], "commands": [
+      "workbench.action.closeSidebar",
+      "workbench.action.focusActiveEditorGroup"
+    ]},
+
+
+    // Comandos específicos para views individuais
+    { "before": ["<leader>", "e", "q"], "commands": [
+      "workbench.files.action.closeFilesExplorer",
+      "workbench.action.focusActiveEditorGroup"
+    ]},
+    { "before": ["<leader>", "s", "q"], "commands": [
+      "search.action.closeSearchView",
+      "workbench.action.focusActiveEditorGroup"
+    ]},
+    { "before": ["<leader>", "g", "q"], "commands": [
+      "workbench.scm.action.closeScmView",
+      "workbench.action.focusActiveEditorGroup"
+    ]},
+    { "before": ["<leader>", "d", "q"], "commands": [
+      "workbench.debug.action.closeDebugView",
+      "workbench.action.focusActiveEditorGroup"
+    ]}
   ],
 
-
-  // telescope keymaps
   "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<S-h>"], "commands": ["workbench.action.previousEditor"] },
+    { "before": ["<S-l>"], "commands": ["workbench.action.nextEditor"] },
+    { "before": ["<leader>", "b", "b"], "commands": ["workbench.action.quickOpenPreviousRecentlyUsedEditor"] },
+    { "before": ["<leader>", "`"], "commands": ["workbench.action.quickOpenPreviousRecentlyUsedEditor"] },
+    { "before": ["<leader>", "b", "d"], "commands": ["workbench.action.closeActiveEditor"] },
+    { "before": ["Q", "Q"], "commands": ["workbench.action.quit"] },
+    { "before": ["W", "W"], "commands": ["workbench.action.files.save"] },
+    { "before": ["E"], "after": ["$"] },
+    { "before": ["B"], "after": ["^"] },
+    { "before": ["<leader>", "s"], "commands": ["editor.action.clearHighlight"] },
+    { "before": ["<A-j>"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["<A-k>"], "commands": ["editor.action.moveLinesUpAction"] },
+    { "before": ["<leader>", "w"], "commands": ["workbench.action.focusPanel"] },
+    { "before": ["<leader>", "-"], "commands": ["workbench.action.splitEditorDown"] },
+    { "before": ["<leader>", "|"], "commands": ["workbench.action.splitEditorRight"] },
+    { "before": ["<leader>", "w", "d"], "commands": ["workbench.action.closeEditorsInGroup"] },
+    { "before": ["<leader>", "q", "q"], "commands": ["workbench.action.closeWindow"] },
+
+    // telescope keymaps
     {
       "before": ["<leader>", "f", "f"],
       "commands": ["workbench.action.findInFiles"]
@@ -93,5 +157,56 @@
       "before": ["<leader>", "<tab>"],
       "commands": ["workbench.action.showCommands"]
     }
-  ]
+  ],
+
+  "vim.handleKeys": {
+    "<leader>ae": false,
+    "<leader>as": false,
+    "<leader>ag": false,
+    "<leader>ad": false,
+    "<leader>ax": false,
+    "<leader>at": false,
+    "<leader>ap": false,
+    "<leader>ao": false,
+    "<leader>am": false,
+    "<leader>ac": false,
+    "<leader>ab": false
+  },
+
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "/home/ruan/.vimrc",
+
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.env.linux": {},
+  "workbench.colorTheme": "poimandres",
+  "workbench.activityBar.location": "bottom",
+  "workbench.editor.showTabs": "single",
+  "workbench.statusBar.visible": false,
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.sideBar.location": "left",
+  "editor.smoothScrolling": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "onHover",
+  "explorer.compactFolders": false,
+  "explorer.sortOrderReverse": true,
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": 2,
+  "window.customTitleBarVisibility": "never",
+  "custom-ui-style.electron": {
+    "titleBarStyle": "hiddenInsed",
+    "trafficLightPosition": {
+      "x": 20,
+      "y": 16
+    }
+  },
+  "vim.overrideCopy": true,
+  "vim.useSystemClipboard": true
 }
