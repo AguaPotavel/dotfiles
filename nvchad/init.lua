@@ -36,9 +36,13 @@ vim.schedule(function()
   require "mappings"
 end)
 
-
 -- custom
-
-require("setup.plugins.leap")
 require("setup.plugins.mini")
-require("setup.plugins.auto-tag")
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    if vim.fn.argc() == 0 then
+      vim.cmd("Nvdash") -- Substitua pelo comando correto do seu dashboard
+    end
+  end,
+})
