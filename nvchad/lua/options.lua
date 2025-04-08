@@ -10,4 +10,4 @@ vim.g.neovide_refresh_rate = 75
 
 vim.g.neovide_cursor_vfx_mode = "railgun"
 
-o.cursorlineopt ='both' -- to enable cursorline!
+o.cursorlineopt = 'both' -- to enable cursorline!

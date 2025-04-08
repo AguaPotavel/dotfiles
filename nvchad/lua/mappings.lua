@@ -1,6 +1,5 @@
 require "nvchad.mappings"
 
-
 local map = vim.keymap.set
 
 -- commons
@@ -28,7 +27,7 @@ map('v', '<space><space>', "<Esc>")
 
 -- Quicker close split
 map("n", "<leader>qq", ":q<CR>",
-  {silent = true, noremap = true}
+  { silent = true, noremap = true }
 )
 
 -- Codeium commands
@@ -37,4 +36,3 @@ map("n", "<leader>qq", ":q<CR>",
 map("n", "<leader>cd", "<cmd>Codeium Disable<cr>", { desc = "Codeium Disable" })
 -- start autocomplete
 map("n", "<leader>ce", "<cmd>Codeium Enable<cr>", { desc = "Codeium Enable" })
-

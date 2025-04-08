@@ -1,31 +1,6 @@
 return {
   -- These are some examples, uncomment them if you want to see them work!
   {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "vimdoc",
-        "html",
-        "css",
-        "svelte",
-        "javascript",
-        "typescript",
-      },
-
-      highlight = { enabled = true },
-    },
-  },
-
-  {
     "ggandor/leap.nvim",
     enabled = true,
   },
@@ -70,7 +45,7 @@ return {
     -- setting the keybinding for LazyGit with 'keys' is recommended in
     -- order to load the plugin when the command is run for the first time
     keys = {
-      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+      { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
   },
 
@@ -92,16 +67,5 @@ return {
       -- configuration goes here
       lang = "javascript",
     },
-  },
-  {
-    "stevearc/oil.nvim",
-    event = "VeryLazy",
-    opts = {},
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-    config = function(_, opts)
-      require("oil").setup(opts)
-      vim.api.nvim_set_keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-    end,
   },
 }
