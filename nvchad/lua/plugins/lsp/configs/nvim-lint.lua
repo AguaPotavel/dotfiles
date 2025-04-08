@@ -5,8 +5,9 @@ return {
   event = {
     "BufReadPost",
     "BufNewFile",
+    "InsertLeave"
   },
-  enabled = false,
+  enabled = true,
   config = function()
     require("lint").linters_by_ft = {
       typescript = { "eslint_d" },
