@@ -17,7 +17,7 @@ return {
     vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)")
 
     -- Remote operations at a distance
-    vim.keymap.set({ "n", "o" }, "r", function()
+    vim.keymap.set({ "n", "o" }, "S", function()
       require("leap.remote").action()
     end)
 

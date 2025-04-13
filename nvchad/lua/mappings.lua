@@ -36,3 +36,12 @@ map("n", "<leader>qq", ":q<CR>",
 map("n", "<leader>cd", "<cmd>Codeium Disable<cr>", { desc = "Codeium Disable" })
 -- start autocomplete
 map("n", "<leader>ce", "<cmd>Codeium Enable<cr>", { desc = "Codeium Enable" })
+
+-- buffers
+map("n", "<S-l>", function()
+  require("nvchad.tabufline").next()
+end, { desc = "buffer goto next" })
+
+map("n", "<S-h>", function()
+  require("nvchad.tabufline").prev()
+end, { desc = "buffer goto prev" })
