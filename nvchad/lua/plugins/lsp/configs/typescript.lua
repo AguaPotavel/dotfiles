@@ -15,7 +15,7 @@ return {
     settings = {
       separate_diagnostic_server = false, -- Disable separate diagnostic server
       tsserver_file_preferences = {
-        includeInlayParameterNameHints = "all",
+        includeInlayParameterNameHints = "none",
         includeCompletionsForModuleExports = true,
         quotePreference = "auto",
       },

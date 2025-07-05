@@ -21,8 +21,8 @@ return {
       opts = {
         opts = {
           -- Defaults
-          enable_close = true, -- Auto close tags
-          enable_rename = true, -- Auto rename pairs of tags
+          enable_close = true,           -- Auto close tags
+          enable_rename = true,          -- Auto rename pairs of tags
           enable_close_on_slash = false, -- Auto close on trailing </
         },
       },
@@ -46,17 +46,38 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    require("nvim-treesitter.configs").setup(opts)
+
+    -- Configuração específica para Move
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+    parser_config.move = {
+      install_info = {
+        url = "https://github.com/tzakian/tree-sitter-move",
+        files = { "src/parser.c" },
+        branch = "main",
+      },
+      filetype = "move",
+    }
+
+    -- Detecção de filetype para arquivos .move
+    vim.filetype.add({
+      extension = {
+        move = "move",
+      },
+    })
+  end,
   opts = {
-    -- highlight = {
-    --   enable = true,
-    --   disable = function(_, buf)
-    --     local max_filesize = 10000 * 1024 -- 10 MB
-    --     local ok, status = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-    --     if ok and status and status.size > max_filesize then
-    --       return true
-    --     end
-    --   end,
-    -- },
+    highlight = {
+      enable = true,
+      disable = function(_, buf)
+        local max_filesize = 10000 * 1024 -- 10 MB
+        local ok, status = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+        if ok and status and status.size > max_filesize then
+          return true
+        end
+      end,
+    },
     ensure_installed = {
       "bash",
       "c",
@@ -71,8 +92,10 @@ return {
       "lua",
       "markdown",
       "markdown_inline",
+      "move",
       "python",
       "regex",
+      "rust",
       "tsx",
       "typescript",
       "vim",
@@ -156,8 +179,8 @@ return {
         -- mapping query_strings to modes.
         selection_modes = {
           ["@parameter.outer"] = "v", -- charwise
-          ["@function.outer"] = "V", -- linewise
-          ["@class.outer"] = "V", -- linewise
+          ["@function.outer"] = "V",  -- linewise
+          ["@class.outer"] = "V",     -- linewise
         },
         -- If you set this to `true` (default is `false`) then any textobject is
         -- extended to include preceding or succeeding whitespace. Succeeding
