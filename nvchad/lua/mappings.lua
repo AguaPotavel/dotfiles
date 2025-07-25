@@ -1,4 +1,4 @@
-require "nvchad.mappings"
+require("nvchad.mappings")
 
 local map = vim.keymap.set
 
@@ -22,26 +22,24 @@ map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
-map('n', '<space><space>', "<cmd>set nohlsearch<CR>")
-map('v', '<space><space>', "<Esc>")
+map("n", "<space><space>", "<cmd>set nohlsearch<CR>")
+map("v", "<space><space>", "<Esc>")
 
 -- Quicker close split
-map("n", "<leader>qq", ":q<CR>",
-  { silent = true, noremap = true }
-)
+map("n", "<leader>qq", ":q<CR>", { silent = true, noremap = true })
 
 -- Codeium commands
 
 -- stop autocomplete
-map("n", "<leader>cd", "<cmd>Codeium Disable<cr>", { desc = "Codeium Disable" })
+map("n", "<leader>ad", "<cmd>Codeium Disable<cr>", { desc = "Codeium Disable" })
 -- start autocomplete
-map("n", "<leader>ce", "<cmd>Codeium Enable<cr>", { desc = "Codeium Enable" })
+map("n", "<leader>ae", "<cmd>Codeium Enable<cr>", { desc = "Codeium Enable" })
 
 -- buffers
 map("n", "<S-l>", function()
-  require("nvchad.tabufline").next()
+	require("nvchad.tabufline").next()
 end, { desc = "buffer goto next" })
 
 map("n", "<S-h>", function()
-  require("nvchad.tabufline").prev()
+	require("nvchad.tabufline").prev()
 end, { desc = "buffer goto prev" })
