@@ -1,0 +1,264 @@
+// Este arquivo deve ser copiado para ~/.config/Code/User/keybindings.json
+// Alternativa: já existe configuração no vscode/settings.json usando vim.normalModeKeyBindings
+[
+  // Exit insert mode with jj (já configurado no settings.json)
+  {
+    "key": "j j",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Insert'"
+  },
+  
+  // Quick save
+  {
+    "key": "shift+w shift+w",
+    "command": "workbench.action.files.save",
+    "when": "editorTextFocus"
+  },
+  
+  // Move lines up/down
+  {
+    "key": "alt+j",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  
+  // Buffer navigation (tabs in VSCode)
+  {
+    "key": "shift+h",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "shift+l",
+    "command": "workbench.action.nextEditor"
+  },
+  
+  // Switch to other buffer/tab
+  {
+    "key": "space b b",
+    "command": "workbench.action.openPreviousRecentlyUsedEditor"
+  },
+  {
+    "key": "space `",
+    "command": "workbench.action.openPreviousRecentlyUsedEditor"
+  },
+  
+  // Close buffer/tab
+  {
+    "key": "space b d",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  
+  // Window splits
+  {
+    "key": "space -",
+    "command": "workbench.action.splitEditorDown"
+  },
+  {
+    "key": "space |",
+    "command": "workbench.action.splitEditorRight"
+  },
+  
+  // Close split/editor
+  {
+    "key": "space w d",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "space q q",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  
+  // Clear search highlight (equivalent to :noh)
+  {
+    "key": "space space",
+    "command": "closeFindWidget",
+    "when": "findWidgetVisible"
+  },
+  {
+    "key": "s s",
+    "command": "closeFindWidget",
+    "when": "findWidgetVisible"
+  },
+  
+  // Navigation between editor groups (window navigation)
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusLeftGroup"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.focusBelowGroup"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusAboveGroup"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusRightGroup"
+  },
+  
+  // Quick quit (close window)
+  {
+    "key": "shift+q shift+q",
+    "command": "workbench.action.closeWindow"
+  },
+  
+  // Move to beginning/end of line
+  {
+    "key": "shift+b",
+    "command": "cursorHome",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+e",
+    "command": "cursorEnd",
+    "when": "editorTextFocus"
+  },
+  
+  // Command mode (equivalent to ; -> :)
+  {
+    "key": ";",
+    "command": "workbench.action.showCommands",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  
+  // === PLUGIN EQUIVALENTS ===
+  
+  // LazyGit (requires GitLens extension)
+  {
+    "key": "space g g",
+    "command": "gitlens.gitCommands"
+  },
+  
+  // Git Blame Toggle (requires GitLens extension)
+  {
+    "key": "space g b",
+    "command": "gitlens.toggleFileBlame"
+  },
+  
+  // Harpoon equivalents (requires Bookmarks extension)
+  {
+    "key": "space p a",
+    "command": "bookmarks.toggle",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "space p h",
+    "command": "bookmarks.list"
+  },
+  {
+    "key": "space p n",
+    "command": "bookmarks.jumpToNext"
+  },
+  {
+    "key": "space p p",
+    "command": "bookmarks.jumpToPrevious"
+  },
+  
+  // Oil file explorer equivalent (built-in file explorer)
+  {
+    "key": "space shift+o",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  
+  // Terminal controls (ToggleTerm equivalent)
+  {
+    "key": "space t f",
+    "command": "workbench.action.terminal.new"
+  },
+  {
+    "key": "space t h",
+    "command": "workbench.action.terminal.split"
+  },
+  {
+    "key": "space t v",
+    "command": "workbench.action.terminal.split"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  
+  // Find and Replace (GrugFar equivalent)
+  {
+    "key": "space f shift+r",
+    "command": "workbench.action.replaceInFiles"
+  },
+  
+  // Todo Comments (requires Todo Tree extension)
+  {
+    "key": "space f shift+t",
+    "command": "todo-tree.showTodoTreeView"
+  },
+  
+  // Trouble equivalent (Problems panel)
+  {
+    "key": "space l b",
+    "command": "workbench.actions.view.problems"
+  },
+  {
+    "key": "space l w",
+    "command": "workbench.actions.view.problems"
+  },
+  
+  // Leap motion equivalent (requires vim extension's jump commands)
+  {
+    "key": "s",
+    "command": "extension.vim_s",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  
+  // Debug controls (DAP equivalent - built-in debugger)
+  {
+    "key": "space d b",
+    "command": "editor.debug.action.toggleBreakpoint"
+  },
+  {
+    "key": "space d shift+b",
+    "command": "editor.debug.action.conditionalBreakpoint"
+  },
+  {
+    "key": "space d c",
+    "command": "workbench.action.debug.continue"
+  },
+  {
+    "key": "space d i",
+    "command": "workbench.action.debug.stepInto"
+  },
+  {
+    "key": "space d o",
+    "command": "workbench.action.debug.stepOut"
+  },
+  {
+    "key": "space d shift+o",
+    "command": "workbench.action.debug.stepOver"
+  },
+  {
+    "key": "space d t",
+    "command": "workbench.action.debug.stop"
+  },
+  {
+    "key": "space d r",
+    "command": "workbench.action.debug.start"
+  },
+  {
+    "key": "space d shift+p",
+    "command": "workbench.action.debug.pause"
+  },
+  
+  // Codeium equivalent (GitHub Copilot)
+  {
+    "key": "space a d",
+    "command": "github.copilot.toggleCopilot"
+  },
+  {
+    "key": "space a e",
+    "command": "github.copilot.toggleCopilot"
+  }
+]

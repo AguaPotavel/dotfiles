@@ -1,0 +1,190 @@
+<keymap version="1" name="NvChad Adapted" parent="$default">
+  <!-- Basic Vim-like mappings -->
+  
+  <!-- Exit insert mode with jj (handled by IdeaVim plugin) -->
+  <!-- Move lines up/down -->
+  <action id="MoveLineUp">
+    <keyboard-shortcut first-keystroke="alt J" />
+  </action>
+  <action id="MoveLineDown">
+    <keyboard-shortcut first-keystroke="alt K" />
+  </action>
+  
+  <!-- Buffer/Tab navigation -->
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="shift H" />
+  </action>
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="shift L" />
+  </action>
+  <action id="RecentFiles">
+    <keyboard-shortcut first-keystroke="space B B" />
+    <keyboard-shortcut first-keystroke="space BACK_QUOTE" />
+  </action>
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="space B D" />
+  </action>
+  
+  <!-- Window splits -->
+  <action id="SplitVertically">
+    <keyboard-shortcut first-keystroke="space PIPE" />
+  </action>
+  <action id="SplitHorizontally">
+    <keyboard-shortcut first-keystroke="space MINUS" />
+  </action>
+  <action id="Unsplit">
+    <keyboard-shortcut first-keystroke="space W D" />
+  </action>
+  <action id="CloseContent">
+    <keyboard-shortcut first-keystroke="space Q Q" />
+  </action>
+  
+  <!-- Navigation between splits -->
+  <action id="GoToNextSplitter">
+    <keyboard-shortcut first-keystroke="ctrl L" />
+  </action>
+  <action id="GoToPrevSplitter">
+    <keyboard-shortcut first-keystroke="ctrl H" />
+  </action>
+  
+  <!-- Quick save -->
+  <action id="SaveAll">
+    <keyboard-shortcut first-keystroke="shift W shift W" />
+  </action>
+  
+  <!-- Clear search highlight -->
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="space SPACE" />
+  </action>
+  
+  <!-- === PLUGIN EQUIVALENTS === -->
+  
+  <!-- LazyGit equivalent (Git integration) -->
+  <action id="Vcs.Show.Local.Changes">
+    <keyboard-shortcut first-keystroke="space G G" />
+  </action>
+  
+  <!-- Git Blame Toggle -->
+  <action id="Annotate">
+    <keyboard-shortcut first-keystroke="space G B" />
+  </action>
+  
+  <!-- Harpoon equivalents (Bookmarks) -->
+  <action id="ToggleBookmark">
+    <keyboard-shortcut first-keystroke="space P A" />
+  </action>
+  <action id="ShowBookmarks">
+    <keyboard-shortcut first-keystroke="space P H" />
+  </action>
+  <action id="GotoNextBookmark">
+    <keyboard-shortcut first-keystroke="space P N" />
+  </action>
+  <action id="GotoPreviousBookmark">
+    <keyboard-shortcut first-keystroke="space P P" />
+  </action>
+  
+  <!-- Oil file explorer equivalent (Project tree) -->
+  <action id="ActivateProjectToolWindow">
+    <keyboard-shortcut first-keystroke="space shift O" />
+  </action>
+  
+  <!-- Terminal controls -->
+  <action id="ActivateTerminalToolWindow">
+    <keyboard-shortcut first-keystroke="space T F" />
+  </action>
+  <action id="Terminal.OpenInTerminal">
+    <keyboard-shortcut first-keystroke="space T H" />
+  </action>
+  <action id="Terminal.SplitVertically">
+    <keyboard-shortcut first-keystroke="space T V" />
+  </action>
+  
+  <!-- Find and Replace (GrugFar equivalent) -->
+  <action id="ReplaceInPath">
+    <keyboard-shortcut first-keystroke="space F shift R" />
+  </action>
+  
+  <!-- Todo Comments (TODO tool window) -->
+  <action id="ActivateTODOToolWindow">
+    <keyboard-shortcut first-keystroke="space F shift T" />
+  </action>
+  
+  <!-- Trouble equivalent (Problems/Issues) -->
+  <action id="ActivateProblemsViewToolWindow">
+    <keyboard-shortcut first-keystroke="space L B" />
+    <keyboard-shortroke first-keystroke="space L W" />
+  </action>
+  
+  <!-- Debug controls (DAP equivalent) -->
+  <action id="ToggleLineBreakpoint">
+    <keyboard-shortcut first-keystroke="space D B" />
+  </action>
+  <action id="ToggleBreakpointEnabled">
+    <keyboard-shortcut first-keystroke="space D shift B" />
+  </action>
+  <action id="Resume">
+    <keyboard-shortcut first-keystroke="space D C" />
+  </action>
+  <action id="StepInto">
+    <keyboard-shortcut first-keystroke="space D I" />
+  </action>
+  <action id="StepOut">
+    <keyboard-shortcut first-keystroke="space D O" />
+  </action>
+  <action id="StepOver">
+    <keyboard-shortcut first-keystroke="space D shift O" />
+  </action>
+  <action id="Stop">
+    <keyboard-shortcut first-keystroke="space D T" />
+  </action>
+  <action id="Debug">
+    <keyboard-shortcut first-keystroke="space D R" />
+  </action>
+  <action id="Pause">
+    <keyboard-shortcut first-keystroke="space D shift P" />
+  </action>
+  
+  <!-- Search and navigation (Telescope equivalents) -->
+  <action id="FindInPath">
+    <keyboard-shortcut first-keystroke="space F F" />
+  </action>
+  <action id="GotoSymbol">
+    <keyboard-shortcut first-keystroke="space F H" />
+  </action>
+  <action id="FindWordAtCaret">
+    <keyboard-shortcut first-keystroke="space F W" />
+  </action>
+  <action id="RecentFiles">
+    <keyboard-shortcut first-keystroke="space F B" />
+  </action>
+  
+  <!-- LSP equivalents (IntelliJ built-in) -->
+  <action id="GotoDeclaration">
+    <keyboard-shortcut first-keystroke="G D" />
+  </action>
+  <action id="GotoImplementation">
+    <keyboard-shortcut first-keystroke="G I" />
+  </action>
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="G R" />
+  </action>
+  <action id="ShowHoverInfo">
+    <keyboard-shortcut first-keystroke="K" />
+  </action>
+  <action id="RenameElement">
+    <keyboard-shortcut first-keystroke="space R N" />
+  </action>
+  <action id="ShowIntentionActions">
+    <keyboard-shortcut first-keystroke="space C A" />
+  </action>
+  
+  <!-- Command palette -->
+  <action id="GotoAction">
+    <keyboard-shortcut first-keystroke="SEMICOLON" />
+  </action>
+  
+  <!-- Leap motion equivalent (AceJump plugin) -->
+  <action id="AceAction">
+    <keyboard-shortcut first-keystroke="S" />
+  </action>
+</keymap>
