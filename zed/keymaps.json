@@ -1,0 +1,50 @@
+[
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      // jj to escape (your existing mapping)
+      "j j": "vim::NormalBefore",
+      // Move lines up/down in insert mode
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "space f f": "file_finder::Toggle",
+      "space f w": "workspace::NewSearch",
+      "ctrl-h": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "ctrl-j": "editor::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "shift-h": "pane::ActivatePreviousItem", // Shift + H para aba à esquerda
+      "shift-l": "pane::ActivateNextItem", // Shift + L para aba à direita
+      "space x": "pane::CloseActiveItem", // Shift + L para aba à direita
+      "space g g": "git_panel::ToggleFocus",
+      "space t v": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !menu",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-n": "editor::ShowCompletions",
+      "cmd-i": "editor::ShowCompletions"
+    }
+  }
+]
